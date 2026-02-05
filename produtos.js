@@ -3,9 +3,6 @@ const produtos = [
     { id: 1, nome: "Brownie Tradicional", preco: 6.00, imagem: "Brownie/b1.jpg" },
     { id: 2, nome: "Bolo de Pote Ninho", preco: 10.00, imagem: "Brownie/b2.jpg" },
     { id: 3, nome: "Bolo de Pote Brigadeiro", preco: 10.00, imagem: "Brownie/b3.jpg" },
-    { id: 4, nome: "Bolo de Pote Brigadeiro", preco: 10.00, imagem: "Brownie/b3.jpg" },
-    { id: 5, nome: "Bolo de Pote Brigadeiro", preco: 10.00, imagem: "Brownie/b3.jpg" },
-    { id: 6, nome: "Bolo de Pote Brigadeiro", preco: 10.00, imagem: "Brownie/b3.jpg" },
 
 ];
 
