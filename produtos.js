@@ -1,4 +1,3 @@
-// 1. Lista de produtos
 const produtos = [
     { id: 1, nome: "Brownie Tradicional", preco: 6.00, imagem: "Brownie/b1.jpg" },
     { id: 2, nome: "Bolo de Pote Ninho", preco: 10.00, imagem: "Brownie/b2.jpg" },
@@ -9,7 +8,6 @@ const produtos = [
 
 let carrinho = [];
 
-// 3. Função renderizar os produtos na tela
 function renderizarProdutos() {
     const container = document.getElementById('cardapio');
     container.innerHTML = ""; 
@@ -48,7 +46,6 @@ function finalizarPedido() {
 
     let mensagem = "Olá Ana! Gostaria de fazer um pedido:\n\n";
     
-    // Monta a lista de itens
     carrinho.forEach(item => {
         mensagem += `• ${item.nome} - R$ ${item.preco.toFixed(2)}\n`;
     });
@@ -56,7 +53,7 @@ function finalizarPedido() {
     const total = carrinho.reduce((sum, item) => sum + item.preco, 0);
     mensagem += `\n*Total: R$ ${total.toFixed(2)}*`;
 
-    const numero = "+553798122843"; // COLOQUE O NÚMERO DELA AQUI (com DDD)
+    const numero = "+553798122843";
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
     
     window.open(url, '_blank');

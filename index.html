@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doces da Ana Flávia | Cardápio</title>
-    
-    <!-- Link do CSS -->
+
+    <link rel="icon" href="https://fav.farm/🍫" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
     <link rel="stylesheet" href="style.css">
     
-    <!-- Fonte do Google -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -19,11 +21,10 @@
         <p>Levando doçura para o seu dia!</p>
     </header>
 
-    <!-- Seção Sobre a Ana Flávia -->
+    <!-- Sobre a Ana Flávia -->
     <section class="sobre">
         <div class="sobre-container">
             <div class="sobre-img">
-                <!-- Certifique-se de que a imagem está na pasta img/ -->
                 <img src="Ana/ana.png" alt="Foto da Ana Flávia">
             </div>
             <div class="sobre-conteudo">
@@ -43,28 +44,37 @@
         </div>
     </section>
 
+
     <!-- Título do Cardápio -->
-    <h2 class="titulo-sessao">Explore Nossas Delícias</h2>
+    <h2 class="titulo-sessao">Explore meu Cardápio 🛒</h2>
+
 
     <!-- Container onde os produtos serão injetados pelo JS -->
     <main id="cardapio" class="container">
-        <!-- O conteúdo aqui será gerado automaticamente pelo produtos.js -->
+
     </main>
 
-    <!-- Botão Flutuante do Carrinho (Importante para finalizar o pedido) -->
     <div id="carrinho-flutuante" class="cart-btn" onclick="finalizarPedido()">
         <span>🛒 Ver Pedido</span>
         <span id="cart-count">0</span>
     </div>
 
-    <!-- Rodapé simples -->
     <footer>
-        <p>Feito com ❤️ para Ana Flávia</p>
-    </footer>
+    <div class="footer-content">
+        
+        <div class="social-links">
+            <a href="https://instagram.com/usuario_da_ana" target="_blank" class="instagram">
+                <i class="fa-brands fa-instagram"></i> @g.anaflavia_
+            </a>
+            <a href="https://github.com/gabrielsdev6" target="_blank" class="github">
+                <i class="fa-brands fa-github"></i> gabrielsdev6
+            </a>
+        </div>
+    </div>
+</footer>
 
 
 
-    <!-- Scripts no final do body para não travar o carregamento do site -->
     <script src="produtos.js"></script>
 </body>
 </html>
