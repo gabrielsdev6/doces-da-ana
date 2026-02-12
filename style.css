@@ -9,8 +9,8 @@
 }
 
 :root {
-    --primaria: #5c3d2e;    /* Marrom Fundo */
-    --secundaria: #dccfb2fd;  /* Bege Destaque */
+    --primaria: #5c3d2e;    
+    --secundaria: #dccfb2;  
     --chocolate: #3d2b1f;   
     --branco: #f5f5f5;      
     --texto-claro: #f5f5f5;
@@ -20,15 +20,16 @@
 
 body {
     background-color: var(--primaria);
-    background-image: radial-gradient(rgba(0,0,0,0.3) 1px, transparent 3px);
+    /* BOLINHAS: Ajustadas para ficarem maiores e nítidas */
+    background-image: radial-gradient(rgba(0,0,0,0.3) 3px, transparent 3px);
     background-size: 45px 45px;
     background-attachment: fixed;
     color: var(--texto-claro);
     line-height: 1.6;
-    overflow-x: hidden; /* Evita rolagem horizontal bugada */
+    overflow-x: hidden;
 }
 
-/* 2. CABEÇALHO (Sticky) */
+/* 2. CABEÇALHO */
 header {
     background-color: var(--secundaria);
     text-align: center;
@@ -92,24 +93,7 @@ header p {
     margin-bottom: 15px;
 }
 
-.badges {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
-.badges span {
-    background: var(--secundaria);
-    color: var(--texto-escuro);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: 600;
-}
-
-/* 4. CARDÁPIO (Ajuste de Grid) */
+/* 4. CARDÁPIO */
 .titulo-sessao {
     font-family: 'Playfair Display', serif;
     text-align: center;
@@ -128,11 +112,6 @@ header p {
 }
 
 /* 5. CARDS DOS PRODUTOS */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 .card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -140,7 +119,6 @@ header p {
     border-radius: 25px;
     text-align: center;
     transition: 0.4s;
-    animation: fadeInUp 0.6s ease backwards;
 }
 
 .card:hover {
@@ -165,12 +143,6 @@ header p {
     margin-bottom: 5px;
 }
 
-.card p {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
 .card button {
     background: var(--secundaria);
     color: var(--texto-escuro);
@@ -181,12 +153,17 @@ header p {
     text-transform: uppercase;
     width: 100%;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
+/* RESTAURANDO HOVERS DOS BOTÕES */
 .card button:hover {
     background: var(--branco);
-    transform: scale(1.02);
+    transform: scale(1.03);
+}
+
+.card button:active {
+    transform: scale(0.97);
 }
 
 /* 6. CARRINHO FLUTUANTE */
@@ -204,6 +181,14 @@ header p {
     font-weight: bold;
     box-shadow: 0 10px 25px rgba(0,0,0,0.4);
     z-index: 2000;
+    transition: 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.cart-btn:hover {
+    background: #1eb954;
+    transform: scale(1.05);
 }
 
 #cart-count {
@@ -214,25 +199,17 @@ header p {
     font-size: 0.8rem;
 }
 
-.cart-btn:hover {
-    background: #80c27a;
-    cursor: pointer;;
-    transform: scale(1.02);
-}
-
 /* 7. FOOTER */
-
-.gabriel{
-    color: var(--secundaria);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-
 footer {
     padding: 60px 20px 120px;
     text-align: center;
     background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.2));
+}
+
+.gabriel {
+    color: var(--secundaria);
+    text-decoration: none;
+    font-weight: 600;
 }
 
 .social-links {
@@ -250,7 +227,7 @@ footer {
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.9rem;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .social-links a:hover {
@@ -259,72 +236,55 @@ footer {
     transform: translateY(-5px);
 }
 
-/* 8. MEDIA QUERIES (O AJUSTE PARA O CELULAR) */
+/* 8. MEDIA QUERIES (AJUSTE FINO PARA CELULAR) */
 @media (max-width: 480px) {
-    
-    /* 1. Diminuir o tamanho do Header para sobrar espaço para o conteúdo */
     header {
-        padding: 30px 15px;
+        padding: 25px 10px; /* Menos padding lateral */
     }
 
     header h1 {
-        font-size: 2.5rem; /* Nome um pouco menor no celular */
+        font-size: 2.2rem;
     }
 
-    /* 2. Reduzir as margens da seção Sobre para não "espremer" o texto */
+    /* Sobre com menos margem e padding para aproveitar a tela */
     .sobre {
-        margin: 20px 15px;
-        padding: 20px;
+        margin: 15px 10px;
+        padding: 20px 15px;
     }
 
     .sobre-conteudo h2 {
         font-size: 1.6rem;
     }
 
-    /* 3. Ajustar o Grid para os cards respirarem */
+    /* Container e Cards sem desperdício de espaço */
     .container {
-        grid-template-columns: 1fr; /* Força uma coluna única bem limpa */
-        gap: 20px;
-        padding: 10px 15px;
+        grid-template-columns: 1fr; 
+        padding: 10px; /* Reduzido de 20px para 10px */
+        gap: 15px;     /* Reduzido de 25px para 15px */
     }
 
-    /* 4. Ajustar o Card para não ficar "gigante" verticalmente */
     .card {
-        padding: 15px;
-        border-radius: 20px;
+        padding: 15px; /* Reduzido de 20px para 15px */
     }
 
     .foto-produto {
-        height: 220px; /* Reduzi um pouco a altura no celular para não rolar tanto */
-        border-radius: 15px;
+        height: 200px; /* Altura menor para o botão de compra aparecer mais rápido */
     }
 
-    .card h3 {
-        font-size: 1.3rem;
-    }
-
-    .card p {
-        font-size: 1.2rem;
-        margin-bottom: 15px;
-    }
-
-    /* 5. Deixar os botões do Rodapé um embaixo do outro se necessário */
     .social-links {
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        padding: 0 10px;
     }
 
     .social-links a {
-        width: 100%; /* Botões de redes sociais ocupam a largura toda no celular */
+        width: 100%;
         justify-content: center;
     }
 
-    /* 6. Botão flutuante um pouco menor para não atrapalhar a visão */
     .cart-btn {
         bottom: 15px;
         right: 15px;
-        padding: 12px 18px;
-        font-size: 0.85rem;
+        padding: 10px 18px;
+        font-size: 0.8rem;
     }
 }
