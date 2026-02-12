@@ -237,6 +237,80 @@ header p {
     font-size: 0.8rem;
 }
 
+/* --- SEÇÃO DE AVISOS --- */
+.avisos {
+    margin: 60px auto;
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+.avisos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.aviso-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(220, 207, 178, 0.1);
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.aviso-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--secundaria);
+    transform: translateY(-5px);
+}
+
+.aviso-item i {
+    font-size: 1.8rem;
+    color: var(--secundaria);
+    margin-bottom: 15px;
+}
+
+.aviso-item h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--secundaria);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.aviso-item p {
+    font-size: 0.85rem;
+    color: var(--texto-claro);
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+/* Ajuste para Mobile */
+@media (max-width: 480px) {
+    .avisos {
+        margin: 40px auto;
+    }
+    
+    .avisos-container {
+        grid-template-columns: 1fr; /* Um aviso embaixo do outro no celular */
+        gap: 15px;
+    }
+
+    .aviso-item {
+        padding: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 /* 7. FOOTER */
 footer {
     padding: 60px 20px 120px;
