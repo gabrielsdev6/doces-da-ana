@@ -166,6 +166,44 @@ header p {
     transform: scale(0.97);
 }
 
+/* PASSO A PASSO */
+.passos { margin: 40px auto; 
+    max-width: 900px; 
+    text-align: center;
+ }
+
+.passos-container { display: flex; 
+    justify-content: space-around; 
+    gap: 20px; 
+    padding: 20px; 
+}
+
+.passo i { font-size: 2rem; 
+    color: var(--secundaria); 
+    margin-bottom: 10px; 
+}
+.passo h3 { font-family: 'Playfair Display', serif; 
+    color: var(--secundaria); 
+    margin-bottom: 5px; 
+}
+.passo p { font-size: 0.85rem; 
+    opacity: 0.8; 
+}
+
+@media (max-width: 480px) {
+    .passos-container { flex-direction: column; gap: 30px; }
+}
+
+
+
+
+
+
+
+
+
+
+
 /* 6. CARRINHO FLUTUANTE */
 .cart-btn {
     position: fixed; 
