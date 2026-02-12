@@ -3,78 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doces da Ana Flávia | Cardápio</title>
+    <title>DeLaire | Cookies & Doces Artesanais</title>
 
-    <link rel="icon" href="https://fav.farm/🍫" />
+    <!-- Ícone da Aba (Favicon) - Troquei para um cookie para combinar com a imagem -->
+    <link rel="icon" href="https://fav.farm/🍪" />
+    
+    <!-- Ícones Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-
+    <!-- CSS Próprio -->
     <link rel="stylesheet" href="style.css">
     
+    <!-- Google Fonts: Poppins e Playfair Display (a fonte elegante dos títulos) -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Cabeçalho -->
+    <!-- Cabeçalho Principal -->
     <header>
-        <h1>🍫 Doces da Ana</h1>
-        <p>Levando doçura para o seu dia!</p>
+        <h1>DeLaire</h1>
+        <p>Cookies & Doces Artesanais</p>
     </header>
 
-    <!-- Sobre a Ana Flávia -->
+    <!-- Seção Sobre a Marca/Ana -->
     <section class="sobre">
         <div class="sobre-container">
             <div class="sobre-img">
-                <img src="Ana/ana.png" alt="Foto da Ana Flávia">
+                <!-- Certifique-se que o caminho da imagem está correto -->
+                <img src="Ana/ana.png" alt="Ana Flávia - Fundadora da DeLaire">
             </div>
             <div class="sobre-conteudo">
-                <h2>Quem é a Ana Flávia?</h2>
+                <h2>A Essência DeLaire</h2>
                 <p>
-                    Oii! Sou a Ana Flavia, tenho 16 anos e gosto muito de confeitaria.
-                    Desde pequena, sempre gostei de fazer receitas para minha família e amigos.
-                    Decidi transformar essa paixão em um negócio para compartilhar minhas delícias com mais pessoas.
-                    Cada doce é feito com muito carinho e ingredientes de qualidade para garantir o melhor sabor.
+                    Oii! Sou a Ana Flavia, fundadora da DeLaire. Minha jornada na confeitaria 
+                    começou como um gesto de carinho para amigos e família, e hoje se transformou 
+                    em uma busca pela receita perfeita. Na DeLaire, acreditamos que cada doce 
+                    é uma oportunidade de criar uma memória especial. Utilizamos apenas chocolate 
+                    nobre e ingredientes selecionados para garantir que você sinta o amor em cada mordida.
                 </p>
                 <div class="badges">
-                    <span>✨ Feito à mão</span>
+                    <span>✨ Receita Autoral</span>
                     <span>🍫 Chocolate Nobre</span>
-                    <span>💖 Muito Amor</span>
+                    <span>🍪 Feito na Hora</span>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Seção do Cardápio -->
+    <h2 class="titulo-sessao">Nosso Cardápio</h2>
 
-    <!-- Título do Cardápio -->
-    <h2 class="titulo-sessao">Explore meu Cardápio 🛒</h2>
-
-
-    <!-- Container onde os produtos serão injetados pelo JS -->
+    <!-- Onde o JavaScript vai injetar os cookies/doces -->
     <main id="cardapio" class="container">
-
+        <!-- Gerado via produtos.js -->
     </main>
 
+    <!-- Botão Flutuante de Pedido -->
     <div id="carrinho-flutuante" class="cart-btn" onclick="finalizarPedido()">
-        <span>🛒 Ver Pedido</span>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span>Ver Pedido</span>
         <span id="cart-count">0</span>
     </div>
 
+    <!-- Rodapé com Redes Sociais -->
     <footer>
-    <div class="footer-content">
-        
-        <div class="social-links">
-            <a href="https://instagram.com/usuario_da_ana" target="_blank" class="instagram">
-                <i class="fa-brands fa-instagram"></i> @g.anaflavia_
-            </a>
-            <a href="https://github.com/gabrielsdev6" target="_blank" class="github">
-                <i class="fa-brands fa-github"></i> gabrielsdev6
-            </a>
+        <div class="footer-content">
+            <p>Desenvolvido com carinho por <a href="https://github.com/gabrielsdev6" target="_blank">Gabriel</a></p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/g.anaflavia_/" target="_blank" class="instagram">
+                    <i class="fa-brands fa-instagram"></i> @g.anaflavia_
+                </a>
+                <a href="https://github.com/gabrielsdev6" target="_blank" class="github">
+                    <i class="fa-brands fa-github"></i> gabrielsdev6
+                </a>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-
-
+    <!-- Script de lógica dos produtos -->
     <script src="produtos.js"></script>
 </body>
 </html>

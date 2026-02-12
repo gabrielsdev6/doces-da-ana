@@ -1,7 +1,10 @@
 const produtos = [
-    { id: 1, nome: "Brownie Tradicional", preco: 6.00, imagem: "Brownie/b1.jpg" },
-    { id: 2, nome: "Bolo de Pote Ninho", preco: 10.00, imagem: "Brownie/b2.jpg" },
-    { id: 3, nome: "Bolo de Pote Brigadeiro", preco: 10.00, imagem: "Brownie/b3.jpg" },
+    { id: 1, nome: "Cookie Tradicional", preco: 10.00, imagem: "cookie/tradicional.jpg" },
+    { id: 2, nome: "Cookie de Nutella", preco: 15.00, imagem: "cookie/nutella.jpg" },
+    { id: 3, nome: "Cookie de Ovomaltine", preco: 12.00, imagem: "cookie/ovomaltine.jpg" },
+    { id: 4, nome: "Cookie de KitKat", preco: 12.00, imagem: "cookie/kitkat.jpg" },
+    { id: 5, nome: "Cookie de Ouro Branco", preco: 12.00, imagem: "cookie/ourobranco.jpg" },
+    
 
 ];
 
