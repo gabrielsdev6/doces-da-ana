@@ -261,43 +261,70 @@ footer {
 
 /* 8. MEDIA QUERIES (O AJUSTE PARA O CELULAR) */
 @media (max-width: 480px) {
+    
+    /* 1. Diminuir o tamanho do Header para sobrar espaço para o conteúdo */
     header {
         padding: 30px 15px;
     }
 
     header h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem; /* Nome um pouco menor no celular */
     }
 
+    /* 2. Reduzir as margens da seção Sobre para não "espremer" o texto */
     .sobre {
         margin: 20px 15px;
         padding: 20px;
     }
 
+    .sobre-conteudo h2 {
+        font-size: 1.6rem;
+    }
+
+    /* 3. Ajustar o Grid para os cards respirarem */
     .container {
-        grid-template-columns: 1fr; /* Força uma coluna única no celular */
-        padding: 15px;
+        grid-template-columns: 1fr; /* Força uma coluna única bem limpa */
         gap: 20px;
+        padding: 10px 15px;
+    }
+
+    /* 4. Ajustar o Card para não ficar "gigante" verticalmente */
+    .card {
+        padding: 15px;
+        border-radius: 20px;
     }
 
     .foto-produto {
-        height: 220px; /* Foto levemente menor para caber melhor */
+        height: 220px; /* Reduzi um pouco a altura no celular para não rolar tanto */
+        border-radius: 15px;
     }
 
+    .card h3 {
+        font-size: 1.3rem;
+    }
+
+    .card p {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    /* 5. Deixar os botões do Rodapé um embaixo do outro se necessário */
     .social-links {
-        flex-direction: column; /* Links um embaixo do outro */
-        padding: 0 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
 
     .social-links a {
-        width: 100%;
+        width: 100%; /* Botões de redes sociais ocupam a largura toda no celular */
         justify-content: center;
     }
 
+    /* 6. Botão flutuante um pouco menor para não atrapalhar a visão */
     .cart-btn {
         bottom: 15px;
         right: 15px;
-        font-size: 0.8rem;
-        padding: 12px 16px;
+        padding: 12px 18px;
+        font-size: 0.85rem;
     }
 }
