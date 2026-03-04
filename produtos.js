@@ -1,4 +1,4 @@
-// 1. BANCO DE DADOS (Adicionado 'categoria')
+// 1. BANCO DE DADOS
 const produtos = [
     { 
         id: 100, 
@@ -8,10 +8,7 @@ const produtos = [
         imagem: "combo/combo.jpeg" // Uma foto com cookies e brownies juntos
     },
 
-
-
-
-
+    //Cookies
     { id: 1, nome: "Cookie Tradicional", preco: 10.00, categoria: "Cookies", imagem: "cookie/tradicional.jpg" },
     { id: 2, nome: "Cookie de KitKat", preco: 12.00, categoria: "Cookies", imagem: "cookie/kitkat.jpg" },
     { id: 3, nome: "Cookie de Nutella", preco: 15.00, categoria: "Cookies", imagem: "cookie/nutella.jpg" },
@@ -21,16 +18,14 @@ const produtos = [
     // Brownies
     { id: 6, nome: "Brownie de Nutella", preco: 12.00, categoria: "Brownies", imagem: "brownie/bnutella.jpg" },
     { id: 7, nome: "Brownie de Brigadeiro", preco: 12.00, categoria: "Brownies", imagem: "brownie/bbrigadeiro.jpg" },
-    {id: 8, nome: "Brownie de Ninho", preco: 12.00, categoria: "Brownies", imagem: "brownie/bninho.jpg" },
-
-    // Comboss
+    { id: 8, nome: "Brownie de Ninho", preco: 12.00, categoria: "Brownies", imagem: "brownie/bninho.jpg" },
 
 ];
 
 let carrinho = [];
 
 
-// 2. RENDERIZAR PRODUTOS (Adicionada categoria como data-attribute)
+// 2. RENDERIZAR PRODUTOS
 function renderizarProdutos(listaParaExibir = produtos) {
     const container = document.getElementById('cardapio');
     container.innerHTML = ""; 
@@ -57,7 +52,7 @@ function adicionarAoCarrinho(id) {
     contador.innerText = carrinho.length;
 }
 
-// 4. FILTRAR PRODUTOS (Corrigida)
+// 4. FILTRAR PRODUTOS 
 function filtrarProdutos(categoria) {
     const produtosFiltrados = categoria === 'Todos' 
         ? produtos 
@@ -66,7 +61,7 @@ function filtrarProdutos(categoria) {
     // Chama a renderização passando apenas os filtrados
     renderizarProdutos(produtosFiltrados);
 
-    // Estilo visual dos botões (opcional)
+    // Estilo visual dos botões
     const botoes = document.querySelectorAll('.filtros button');
     botoes.forEach(btn => {
         btn.classList.remove('active');
@@ -74,7 +69,7 @@ function filtrarProdutos(categoria) {
     });
 }
 
-// 5. FINALIZAR PEDIDO (Com soma de itens iguais)
+// 5. FINALIZAR PEDIDO
 function finalizarPedido() {
     if (carrinho.length === 0) {
         alert("Seu carrinho está vazio!");
@@ -83,7 +78,7 @@ function finalizarPedido() {
 
     let mensagem = "Olá Ana! Gostaria de fazer um pedido na DeLaire:\n\n";
     
-    // Lógica para não repetir nomes (ex: 2x Cookie Nutella)
+    // Lógica para não repetir nomes
     const contagemItens = {};
     carrinho.forEach(item => {
         contagemItens[item.nome] = (contagemItens[item.nome] || 0) + 1;
@@ -102,5 +97,4 @@ function finalizarPedido() {
     window.open(url, '_blank');
 }
 
-// Inicializa o site
 renderizarProdutos();

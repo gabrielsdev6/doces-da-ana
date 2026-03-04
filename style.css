@@ -124,7 +124,7 @@ header p {
 }
 
 
-/* 4. FILTROS (Novo: Para separar Cookies de Brownies) */
+/* 4. FILTROS */
 .filtros {
     display: flex;
     justify-content: center;
@@ -241,7 +241,7 @@ header p {
     transform: scale(1.02); /* Ele fica levemente maior que os outros */
 }
 
-/* Adicionando um selo de "Melhor Oferta" no Combo */
+/* "Melhor Oferta" no Combo */
 .card[data-categoria="Combos"]::before {
     content: "⭐ MAIS VENDIDO";
     position: absolute;
