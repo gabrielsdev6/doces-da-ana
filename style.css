@@ -20,7 +20,6 @@
 
 body {
     background-color: var(--primaria);
-    /* BOLINHAS: Ajustadas para ficarem maiores e nítidas */
     background-image: radial-gradient(rgba(0,0,0,0.3) 3px, transparent 3px);
     background-size: 45px 45px;
     background-attachment: fixed;
@@ -93,7 +92,65 @@ header p {
     margin-bottom: 15px;
 }
 
-/* 4. CARDÁPIO */
+.badges{
+    border-radius: 3%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 10px 15px;
+    flex-wrap: wrap;
+}
+
+.badges .badge {
+    background: var(--secundaria);
+    color: var(--texto-escuro);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+    white-space: nowrap;
+}
+
+.badges .badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 480px) {
+    .badges .badge { font-size: 0.75rem; padding: 5px 10px; }
+}
+
+
+/* 4. FILTROS (Novo: Para separar Cookies de Brownies) */
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.filtros button {
+    background: transparent;
+    border: 1px solid var(--secundaria);
+    color: var(--secundaria);
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.filtros button:hover, .filtros button.active {
+    background: var(--secundaria);
+    color: var(--texto-escuro);
+}
+
+/* 5. CARDÁPIO */
 .titulo-sessao {
     font-family: 'Playfair Display', serif;
     text-align: center;
@@ -111,7 +168,7 @@ header p {
     margin: 0 auto;
 }
 
-/* 5. CARDS DOS PRODUTOS */
+/* 6. CARDS DOS PRODUTOS (Com Etiqueta de Categoria) */
 .card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -119,6 +176,22 @@ header p {
     border-radius: 25px;
     text-align: center;
     transition: 0.4s;
+    position: relative; /* Importante para a tag */
+}
+
+.categoria-tag {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background: var(--secundaria);
+    color: var(--texto-escuro);
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .card:hover {
@@ -156,55 +229,89 @@ header p {
     transition: 0.3s ease;
 }
 
-/* RESTAURANDO HOVERS DOS BOTÕES */
 .card button:hover {
     background: var(--branco);
-    transform: scale(1.03);
+    transform: scale(1.02);
 }
 
-.card button:active {
-    transform: scale(0.97);
+/* Efeito especial para o Card de Combo */
+.card[data-categoria="Combos"] {
+    border: 2px solid var(--secundaria); /* Borda bege mais forte */
+    background: linear-gradient(145deg, rgba(220, 207, 178, 0.1), rgba(255, 255, 255, 0.05));
+    transform: scale(1.02); /* Ele fica levemente maior que os outros */
 }
 
-/* PASSO A PASSO */
-.passos { margin: 40px auto; 
+/* Adicionando um selo de "Melhor Oferta" no Combo */
+.card[data-categoria="Combos"]::before {
+    content: "⭐ MAIS VENDIDO";
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: #d4af37; /* Cor Ouro */
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    z-index: 20;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+
+
+
+
+
+
+
+
+
+/* 7. SEÇÕES EXTRAS (Passos e Avisos) */
+.passos, .avisos { 
+    margin: 60px auto; 
     max-width: 900px; 
     text-align: center;
- }
+    padding: 0 20px;
+}
 
-.passos-container { display: flex; 
+.passos-container, .avisos-container { 
+    display: flex; 
     justify-content: space-around; 
     gap: 20px; 
     padding: 20px; 
 }
 
-.passo i { font-size: 2rem; 
+.avisos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.passo i, .aviso-item i { 
+    font-size: 2rem; 
+    color: var(--secundaria); 
+    margin-bottom: 15px; 
+}
+
+.passo h3, .aviso-item h3 { 
+    font-family: 'Playfair Display', serif; 
     color: var(--secundaria); 
     margin-bottom: 10px; 
 }
-.passo h3 { font-family: 'Playfair Display', serif; 
-    color: var(--secundaria); 
-    margin-bottom: 5px; 
-}
-.passo p { font-size: 0.85rem; 
-    opacity: 0.8; 
-}
 
-@media (max-width: 480px) {
-    .passos-container { flex-direction: column; gap: 30px; }
+.aviso-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(220, 207, 178, 0.1);
+    padding: 25px;
+    border-radius: 20px;
+    transition: 0.3s ease;
 }
 
+.aviso-item:hover {
+    border-color: var(--secundaria);
+    background: rgba(255, 255, 255, 0.06);
+}
 
-
-
-
-
-
-
-
-
-
-/* 6. CARRINHO FLUTUANTE */
+/* 8. CARRINHO FLUTUANTE */
 .cart-btn {
     position: fixed; 
     bottom: 20px; 
@@ -224,11 +331,6 @@ header p {
     border: none;
 }
 
-.cart-btn:hover {
-    background: #1eb954;
-    transform: scale(1.05);
-}
-
 #cart-count {
     background: white;
     color: var(--whatsapp);
@@ -237,91 +339,11 @@ header p {
     font-size: 0.8rem;
 }
 
-/* --- SEÇÃO DE AVISOS --- */
-.avisos {
-    margin: 60px auto;
-    max-width: 1000px;
-    padding: 0 20px;
-}
-
-.avisos-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.aviso-item {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(220, 207, 178, 0.1);
-    padding: 25px;
-    border-radius: 20px;
-    text-align: center;
-    transition: 0.3s ease;
-}
-
-.aviso-item:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: var(--secundaria);
-    transform: translateY(-5px);
-}
-
-.aviso-item i {
-    font-size: 1.8rem;
-    color: var(--secundaria);
-    margin-bottom: 15px;
-}
-
-.aviso-item h3 {
-    font-family: 'Playfair Display', serif;
-    color: var(--secundaria);
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-.aviso-item p {
-    font-size: 0.85rem;
-    color: var(--texto-claro);
-    opacity: 0.8;
-    line-height: 1.5;
-}
-
-/* Ajuste para Mobile */
-@media (max-width: 480px) {
-    .avisos {
-        margin: 40px auto;
-    }
-    
-    .avisos-container {
-        grid-template-columns: 1fr; /* Um aviso embaixo do outro no celular */
-        gap: 15px;
-    }
-
-    .aviso-item {
-        padding: 20px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-/* 7. FOOTER */
+/* 9. FOOTER */
 footer {
     padding: 60px 20px 120px;
     text-align: center;
     background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.2));
-}
-
-.gabriel {
-    color: var(--secundaria);
-    text-decoration: none;
-    font-weight: 600;
 }
 
 .social-links {
@@ -339,64 +361,27 @@ footer {
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.9rem;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
-.social-links a:hover {
-    background: var(--secundaria);
-    color: var(--texto-escuro);
-    transform: translateY(-5px);
-}
-
-/* 8. MEDIA QUERIES (AJUSTE FINO PARA CELULAR) */
+/* 10. MEDIA QUERIES (CELULAR) */
 @media (max-width: 480px) {
-    header {
-        padding: 25px 10px; /* Menos padding lateral */
-    }
+    header h1 { font-size: 2.2rem; }
+    
+    .sobre { margin: 20px 15px; padding: 20px 15px; }
 
-    header h1 {
-        font-size: 2.2rem;
-    }
+    .passos-container { flex-direction: column; gap: 30px; }
 
-    /* Sobre com menos margem e padding para aproveitar a tela */
-    .sobre {
-        margin: 15px 10px;
-        padding: 20px 15px;
-    }
-
-    .sobre-conteudo h2 {
-        font-size: 1.6rem;
-    }
-
-    /* Container e Cards sem desperdício de espaço */
     .container {
         grid-template-columns: 1fr; 
-        padding: 10px; /* Reduzido de 20px para 10px */
-        gap: 15px;     /* Reduzido de 25px para 15px */
+        padding: 10px;
+        gap: 15px;
     }
 
-    .card {
-        padding: 15px; /* Reduzido de 20px para 15px */
-    }
+    .foto-produto { height: 200px; }
 
-    .foto-produto {
-        height: 200px; /* Altura menor para o botão de compra aparecer mais rápido */
-    }
+    .social-links { flex-direction: column; padding: 0 20px; }
+    .social-links a { width: 100%; justify-content: center; }
 
-    .social-links {
-        flex-direction: column;
-        padding: 0 10px;
-    }
-
-    .social-links a {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .cart-btn {
-        bottom: 15px;
-        right: 15px;
-        padding: 10px 18px;
-        font-size: 0.8rem;
-    }
+    .categoria-tag { top: 25px; left: 25px; font-size: 0.6rem; }
 }

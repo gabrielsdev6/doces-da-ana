@@ -3,33 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DeLaire | Cookies & Doces Artesanais</title>
+    <title> DeLaire | Cookies & Brownies Artesanais </title>
 
-    <!-- Ícone da Aba (Favicon) - Troquei para um cookie para combinar com a imagem -->
+    
     <link rel="icon" href="https://fav.farm/🍪" />
     
-    <!-- Ícones Font Awesome -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <!-- CSS Próprio -->
+    
     <link rel="stylesheet" href="style.css">
     
-    <!-- Google Fonts: Poppins e Playfair Display (a fonte elegante dos títulos) -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Cabeçalho Principal -->
+    
     <header>
         <h1>DeLaire</h1>
         <p>Cookies & Doces Artesanais</p>
     </header>
 
-    <!-- Seção Sobre a Marca/Ana -->
+    
     <section class="sobre">
         <div class="sobre-container">
             <div class="sobre-img">
-                <!-- Certifique-se que o caminho da imagem está correto -->
                 <img src="Ana/ana.png" alt="Ana Flávia - Fundadora da DeLaire">
             </div>
             <div class="sobre-conteudo">
@@ -42,9 +41,9 @@
                     nobre e ingredientes selecionados para garantir que você sinta o amor em cada mordida.
                 </p>
                 <div class="badges">
-                    <span>✨ Receita Autoral</span>
-                    <span>🍫 Chocolate Nobre</span>
-                    <span>🍪 Feito na Hora</span>
+                    <span class="badge">✨ Receita Autoral</span>
+                    <span class="badge">🍫 Chocolate Nobre</span>
+                    <span class="badge">🍪 Feito na Hora</span>
                 </div>
             </div>
         </div>
@@ -52,7 +51,7 @@
 
 
         <section class="passos">
-        <h2 class="titulo-sessao">Como garantir o seu cookie</h2>
+        <h2 class="titulo-sessao">Como garantir o seu doce perfeito</h2>
         <div class="passos-container">
             <div class="passo">
                 <i class="fa-solid fa-cookie-bite"></i>
@@ -75,9 +74,17 @@
     <!-- Seção do Cardápio -->
     <h2 class="titulo-sessao">Nosso Cardápio</h2>
 
-    <!-- Onde o JavaScript vai injetar os cookies/doces -->
+    <div class="filtros">
+    <button onclick="filtrarProdutos('Todos')">Todos</button>
+    <button onclick="filtrarProdutos('Cookies')">Cookies</button>
+    <button onclick="filtrarProdutos('Brownies')">Brownies</button>
+    <button onclick="filtrarProdutos('Combos')">Combos</button>
+    </div>
+    
+
+    
     <main id="cardapio" class="container">
-        <!-- Gerado via produtos.js -->
+        <!-- produtos.js -->
     </main>
 
 
@@ -104,7 +111,7 @@
             <div class="aviso-item">
                 <i class="fa-solid fa-clock"></i>
                 <h3>Encomendas</h3>
-                <p>Pedidos devem ser feitos com pelo menos 24h de antecedência.</p>
+                <p>Pedidos devem ser feitos com pelo menos 3h de antecedência.</p>
             </div>
             <div class="aviso-item">
                 <i class="fa-solid fa-credit-card"></i>
