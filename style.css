@@ -257,14 +257,10 @@ header p {
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-
-
-
-
-
-
-
-
+.card[data-categoria="Combos"]:hover {
+    transform: scale(1.05);
+    border-color: #d4af37; /* Borda fica dourada ao passar o mouse */
+}
 
 /* 7. SEÇÕES EXTRAS (Passos e Avisos) */
 .passos, .avisos { 

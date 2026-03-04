@@ -3,7 +3,7 @@ const produtos = [
     { 
         id: 100, 
         nome: "Combo Degustação DeLaire", 
-        preco: 35.00, 
+        preco: 99.00, 
         categoria: "Combos", 
         imagem: "combo/combo.jpeg" // Uma foto com cookies e brownies juntos
     },
@@ -15,12 +15,13 @@ const produtos = [
     { id: 1, nome: "Cookie Tradicional", preco: 10.00, categoria: "Cookies", imagem: "cookie/tradicional.jpg" },
     { id: 2, nome: "Cookie de KitKat", preco: 12.00, categoria: "Cookies", imagem: "cookie/kitkat.jpg" },
     { id: 3, nome: "Cookie de Nutella", preco: 15.00, categoria: "Cookies", imagem: "cookie/nutella.jpg" },
-    { id: 4, nome: "Cookie de Ovomaltine", preco: 12.00, categoria: "Cookies", imagem: "cookie/ovomaltine.jpg" },
+    { id: 4, nome: "Cookie de Ovomaltine", preco: 12.00, categoria: "Cookies", imagem: "cookie/ovomaltine.png" },
     { id: 5, nome: "Cookie de Ouro Branco", preco: 12.00, categoria: "Cookies", imagem: "cookie/ourobranco.jpg" },
 
     // Brownies
-    { id: 6, nome: "Brownie Nutella", preco: 10.00, categoria: "Brownies", imagem: "brownie/nutella.jpg" },
-    { id: 7, nome: "Brownie de Doce de Leite", preco: 12.00, categoria: "Brownies", imagem: "brownie/doceleite.jpg" },
+    { id: 6, nome: "Brownie de Nutella", preco: 12.00, categoria: "Brownies", imagem: "brownie/bnutella.jpg" },
+    { id: 7, nome: "Brownie de Brigadeiro", preco: 12.00, categoria: "Brownies", imagem: "brownie/bbrigadeiro.jpg" },
+    {id: 8, nome: "Brownie de Ninho", preco: 12.00, categoria: "Brownies", imagem: "brownie/bninho.jpg" },
 
     // Comboss
 
